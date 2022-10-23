@@ -64,7 +64,6 @@ function createCats(cats) {
 
   for (let i = 0; i < cats.length; i++) {
     list += `<h5>${cats[i].name}</h5><p>${cats[i].age}</p>`;
-
     console.log(list);
   }
   const htmlFinal = "<div>" + list + "</div>";
@@ -78,3 +77,34 @@ const newHtml = createCats(cats);
 container.innerHTML = newHtml;
 
 createCats(cats);
+
+//Question 8
+/*After a lot of attemts i used arrow function.
+   I think i understand it. 
+  The cat is like a new variable for each of the object in the array, so writing cat.name would be the same as writing cats[i].name.
+  Here i have made two functions, and i use the ageValidation function to check if there are any undefined ages in the forEach function.
+  I am not sure that i understand it correctly, that is why im have commented it out.
+
+const ageValidation = (age) => {
+  if (age === undefined) return "Age unknown";
+
+  return age;
+};
+
+const createCats = (cats) => {
+  let list = "";
+
+  cats.forEach((cat) => {
+    list += "<div>";
+    list += `<h5>${cat.name}</h5><p>${ageValidation(cat.age)}</p>`;
+    list += "</div>";
+  });
+  return list;
+};
+ 
+const container = document.querySelector(".cat-container");
+
+ const newHtml = createCats(cats);
+
+ container.innerHTML = newHtml;
+ */
